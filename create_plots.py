@@ -5,47 +5,14 @@ import json
 import time
 from itertools import cycle
 from matplotlib.lines import Line2D
+from collections import defaultdict
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import numpy as np
 
 from config import SCRIPT_DIR, CSV_FILE, PLOTS_DIR, REPO, PlotConfig
-
-
-def run_gh_command(args, max_retries=3):
-    """Run a GitHub CLI command with retry logic for rate limiting."""
-    cmd = ["gh"] + args
-    
-    for attempt in range(max_retries):
-        try:
-            result = subprocess.run(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                check=True
-            )
-            return result.stdout.strip()
-        except subprocess.CalledProcessError as e:
-            stderr_lower = e.stderr.lower()
-            
-            # Check for rate limiting
-            if 'rate limit' in stderr_lower or 'api rate limit exceeded' in stderr_lower:
-                if attempt < max_retries - 1:
-                    wait_time = (2 ** attempt) * 60  # Exponential backoff: 60s, 120s, 240s
-                    print(f"⚠️  Rate limit hit. Waiting {wait_time}s before retry {attempt + 2}/{max_retries}...")
-                    time.sleep(wait_time)
-                    continue
-                else:
-                    print(f"⚠️  Rate limit exceeded after {max_retries} retries")
-                    return None
-            
-            # Non-rate-limit error
-            print(f"⚠️  Error running gh command: {e.stderr}")
-            return None
-    
-    return None
+from github_utils import run_gh_command, categorize_asset, fetch_releases_with_assets
 
 
 def fetch_releases():
@@ -755,6 +722,220 @@ def create_averages_comparison_plot(df, releases):
     print(f"✅ Averages comparison plot with subplots → {averages_path}")
 
 
+
+def create_installer_downloads_plot(releases):
+    """Create a bar plot showing installer downloads per release."""
+    print("ℹ️  Creating installer downloads plot...")
+    
+    release_data = []
+    
+    for release in releases:
+        tag = release.get('tag_name', 'unknown')
+        assets = release.get('assets', [])
+        
+        installer_downloads = sum(
+            asset.get('download_count', 0)
+            for asset in assets
+            if categorize_asset(asset['name']) == 'installer'
+        )
+        
+        if installer_downloads > 0:
+            release_data.append({
+                'tag': tag,
+                'downloads': installer_downloads
+            })
+    
+    if not release_data:
+        print("⚠️  No installer downloads found")
+        return None
+    
+    # Sort by tag name (which should be chronological for version tags)
+    release_data.sort(key=lambda x: x['tag'], reverse=True)
+    
+    # Limit to most recent releases for readability
+    max_releases_to_show = 20
+    if len(release_data) > max_releases_to_show:
+        release_data = release_data[:max_releases_to_show]
+    
+    tags = [r['tag'] for r in release_data]
+    downloads = [r['downloads'] for r in release_data]
+    
+    fig, ax = plt.subplots(figsize=(14, 8))
+    
+    bars = ax.barh(range(len(tags)), downloads, color='steelblue', alpha=0.7)
+    ax.set_yticks(range(len(tags)))
+    ax.set_yticklabels(tags)
+    ax.set_xlabel('Downloads', fontsize=12)
+    ax.set_ylabel('Release', fontsize=12)
+    ax.set_title('Installer Downloads per Release', fontsize=14, pad=20)
+    ax.grid(True, axis='x', linestyle='--', alpha=0.5)
+    
+    # Add value labels on bars
+    for i, (bar, count) in enumerate(zip(bars, downloads)):
+        ax.text(count, i, f' {count:,}', va='center', fontsize=9)
+    
+    plt.tight_layout()
+    
+    path = PLOTS_DIR / "installer_downloads.png"
+    fig.savefig(path, dpi=PlotConfig.DPI, bbox_inches='tight')
+    plt.close(fig)
+    
+    print(f"✅ Installer downloads plot → {path}")
+    return path
+
+
+def create_wx_wheel_downloads_plot(releases):
+    """Create a bar plot showing total wx wheel downloads."""
+    print("ℹ️  Creating wx wheel downloads plot...")
+    
+    wheel_downloads = defaultdict(int)
+    
+    for release in releases:
+        assets = release.get('assets', [])
+        
+        for asset in assets:
+            asset_name = asset.get('name', '')
+            asset_type = categorize_asset(asset_name)
+            
+            # Only count wx wheels (ignore python wheels)
+            if asset_type == 'wx_wheel':
+                downloads = asset.get('download_count', 0)
+                wheel_downloads[asset_name] += downloads
+    
+    if not wheel_downloads:
+        print("⚠️  No wx wheel downloads found")
+        return None
+    
+    # Sort by downloads (descending)
+    sorted_wheels = sorted(
+        wheel_downloads.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
+    
+    # Limit for readability
+    max_wheels_to_show = 25
+    if len(sorted_wheels) > max_wheels_to_show:
+        sorted_wheels = sorted_wheels[:max_wheels_to_show]
+    
+    wheel_names = [w[0] for w in sorted_wheels]
+    downloads = [w[1] for w in sorted_wheels]
+    
+    # Shorten wheel names for display
+    display_names = []
+    for name in wheel_names:
+        # Extract key parts of the wheel name
+        if len(name) > 40:
+            # Try to extract version info
+            parts = name.split('-')
+            if len(parts) >= 2:
+                display_name = f"{parts[0]}-{parts[1]}"
+            else:
+                display_name = name[:37] + "..."
+        else:
+            display_name = name
+        display_names.append(display_name)
+    
+    fig, ax = plt.subplots(figsize=(14, 10))
+    
+    bars = ax.barh(range(len(display_names)), downloads, color='darkorange', alpha=0.7)
+    ax.set_yticks(range(len(display_names)))
+    ax.set_yticklabels(display_names, fontsize=8)
+    ax.set_xlabel('Total Downloads (across all releases)', fontsize=12)
+    ax.set_ylabel('Wheel File', fontsize=12)
+    ax.set_title('Total wx Wheel Downloads (Python wheels in early releases ignored)', 
+                 fontsize=14, pad=20)
+    ax.grid(True, axis='x', linestyle='--', alpha=0.5)
+    
+    # Add value labels on bars
+    for i, (bar, count) in enumerate(zip(bars, downloads)):
+        ax.text(count, i, f' {count:,}', va='center', fontsize=8)
+    
+    plt.tight_layout()
+    
+    path = PLOTS_DIR / "wx_wheel_downloads.png"
+    fig.savefig(path, dpi=PlotConfig.DPI, bbox_inches='tight')
+    plt.close(fig)
+    
+    total_downloads = sum(downloads)
+    print(f"✅ Wx wheel downloads plot → {path}")
+    print(f"   Total wx wheel downloads: {total_downloads:,}")
+    return path
+
+
+def create_download_summary_plot(releases):
+    """Create a summary plot showing download distribution by asset type."""
+    print("ℹ️  Creating download summary plot...")
+    
+    downloads_by_type = defaultdict(int)
+    
+    for release in releases:
+        assets = release.get('assets', [])
+        
+        for asset in assets:
+            asset_name = asset.get('name', '')
+            downloads = asset.get('download_count', 0)
+            asset_type = categorize_asset(asset_name)
+            downloads_by_type[asset_type] += downloads
+    
+    if not downloads_by_type:
+        print("⚠️  No download data found")
+        return None
+    
+    # Create pie chart and bar chart side by side
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    
+    # Pie chart
+    labels = []
+    sizes = []
+    colors = ['steelblue', 'darkorange', 'lightcoral', 'lightgray']
+    
+    for asset_type in ['installer', 'wx_wheel', 'python_wheel', 'other']:
+        count = downloads_by_type.get(asset_type, 0)
+        if count > 0:
+            labels.append(asset_type.replace('_', ' ').title())
+            sizes.append(count)
+    
+    if sizes:
+        wedges, texts, autotexts = ax1.pie(
+            sizes, labels=labels, colors=colors[:len(labels)],
+            autopct=lambda pct: f'{pct:.1f}%\n({int(pct/100*sum(sizes)):,})',
+            startangle=90
+        )
+        for autotext in autotexts:
+            autotext.set_color('white')
+            autotext.set_fontweight('bold')
+            autotext.set_fontsize(10)
+    
+    ax1.set_title('Download Distribution by Asset Type', fontsize=14, pad=20)
+    
+    # Bar chart
+    if labels and sizes:
+        bars = ax2.bar(labels, sizes, color=colors[:len(labels)], alpha=0.7)
+        ax2.set_ylabel('Downloads', fontsize=12)
+        ax2.set_title('Total Downloads by Asset Type', fontsize=14, pad=20)
+        ax2.grid(True, axis='y', linestyle='--', alpha=0.5)
+        
+        # Add value labels on bars
+        for bar in bars:
+            height = bar.get_height()
+            ax2.text(bar.get_x() + bar.get_width()/2., height,
+                    f'{int(height):,}',
+                    ha='center', va='bottom', fontsize=10)
+        
+        # Rotate x-axis labels if needed
+        plt.setp(ax2.xaxis.get_majorticklabels(), rotation=45, ha='right')
+    
+    plt.tight_layout()
+    
+    path = PLOTS_DIR / "download_summary.png"
+    fig.savefig(path, dpi=PlotConfig.DPI, bbox_inches='tight')
+    plt.close(fig)
+    
+    print(f"✅ Download summary plot → {path}")
+    return path
+
+
 def generate_readme(created_plots):
     """Generate README.md with the created plots."""
     print("ℹ️  Generating README.md...")
@@ -798,6 +979,14 @@ def main():
     # New visualizations
     dist_path = create_distribution_plot(df)
     heatmap_path = create_performance_heatmap(df)
+    
+    # Fetch releases with download data
+    releases_with_assets = fetch_releases_with_assets()
+    
+    # Generate download plots
+    installer_downloads_path = create_installer_downloads_plot(releases_with_assets)
+    wx_downloads_path = create_wx_wheel_downloads_plot(releases_with_assets)
+    summary_path = create_download_summary_plot(releases_with_assets)
 
     # Register plots for README
     combined_path = PLOTS_DIR / "all_runs.png"
@@ -830,6 +1019,25 @@ def main():
                 'name': f"{os_name} Subplots",
                 'path': plot_path
             })
+    
+    # Add download plots to README
+    if installer_downloads_path:
+        created_plots.append({
+            'name': "Installer Downloads per Release",
+            'path': installer_downloads_path
+        })
+    
+    if wx_downloads_path:
+        created_plots.append({
+            'name': "Total wx Wheel Downloads",
+            'path': wx_downloads_path
+        })
+    
+    if summary_path:
+        created_plots.append({
+            'name': "Download Summary by Asset Type",
+            'path': summary_path
+        })
 
     generate_readme(created_plots)
 

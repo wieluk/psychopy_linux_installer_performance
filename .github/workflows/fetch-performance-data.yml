@@ -74,6 +74,10 @@ jobs:
           exit $exit_code
         fi
     
+    - name: Display download statistics
+      if: steps.fetch_data.outputs.new_data == 'true'
+      run: python ./get_downloads.py
+    
     - name: Generate plots
       if: steps.fetch_data.outputs.new_data == 'true'
       run: python ./create_plots.py
