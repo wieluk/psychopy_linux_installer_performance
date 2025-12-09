@@ -55,8 +55,8 @@ def categorize_asset(asset_name):
     
     # Wheel files
     if name_lower.endswith('.whl'):
-        # wx wheels
-        if 'wxpython' in name_lower or 'wx' in name_lower:
+        # wx wheels - check for wxpython or wx as package name prefix
+        if 'wxpython' in name_lower or name_lower.split('-')[0] in ('wx', 'wxgtk'):
             return 'wx_wheel'
         # Python/PsychoPy wheels (to be ignored in early releases)
         elif 'psychopy' in name_lower or 'python' in name_lower:

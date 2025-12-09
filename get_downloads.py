@@ -107,12 +107,18 @@ def display_wx_wheel_downloads(releases, ignore_python_wheels=True):
         # Show breakdown by release if there are multiple
         if num_releases > 1:
             print(f"   Breakdown by release:")
-            for release_info in sorted(
+            # Limit to top 5 releases for readability
+            sorted_releases = sorted(
                 wheel_releases[wheel_name], 
                 key=lambda x: x['downloads'], 
                 reverse=True
-            ):
+            )
+            for i, release_info in enumerate(sorted_releases[:5]):
                 print(f"      └─ {release_info['tag']}: {release_info['downloads']:,}")
+            
+            if num_releases > 5:
+                remaining = num_releases - 5
+                print(f"      ... and {remaining} more release(s)")
         print()
     
     print(f"{'─' * 80}")
