@@ -960,7 +960,6 @@ def main():
     # Generate download plots
     installer_downloads_path = create_installer_downloads_plot(releases_with_assets)
     wx_downloads_path = create_wx_wheel_downloads_plot(releases_with_assets)
-    summary_path = create_download_summary_plot(releases_with_assets)
 
     # Register plots for README
     combined_path = PLOTS_DIR / "all_runs.png"
@@ -1005,12 +1004,6 @@ def main():
         created_plots.append({
             'name': "Total wx Wheel Downloads",
             'path': wx_downloads_path
-        })
-    
-    if summary_path:
-        created_plots.append({
-            'name': "Download Summary by Asset Type",
-            'path': summary_path
         })
 
     generate_readme(created_plots)
