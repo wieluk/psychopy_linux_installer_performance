@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  fetch-data:
+  fetch-performance:
     runs-on: ubuntu-latest
     
     steps:
@@ -57,8 +57,8 @@ jobs:
       id: fetch_data
       run: |
         # Run script with real-time output and capture exit code
-        echo "Running update_data.py..."
-        python -u ./update_data.py || exit_code=$?
+        echo "Running fetch_performance.py..."
+        python -u ./fetch_performance.py || exit_code=$?
         
         # Handle exit codes
         if [ -z "$exit_code" ]; then
@@ -73,10 +73,6 @@ jobs:
           echo "Script failed with exit code $exit_code"
           exit $exit_code
         fi
-    
-    - name: Display download statistics
-      if: steps.fetch_data.outputs.new_data == 'true'
-      run: python ./get_downloads.py
     
     - name: Generate plots
       if: steps.fetch_data.outputs.new_data == 'true'

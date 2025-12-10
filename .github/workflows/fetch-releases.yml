@@ -1,0 +1,93 @@
+name: Fetch Release Download Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run daily at 01:00 UTC (after potential new releases)
+    - cron: '0 1 * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: fetch-releases-data
+  cancel-in-progress: false
+
+jobs:
+  fetch-releases:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+    
+    - name: Pull latest changes
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git pull origin main || echo "No changes to pull"
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Install GitHub CLI
+      run: |
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+        sudo apt update
+        sudo apt install gh
+    
+    - name: Authenticate GitHub CLI
+      run: echo "${{ secrets.PAT || secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+    
+    - name: Fetch release data
+      id: fetch_releases
+      run: |
+        echo "Running fetch_releases.py..."
+        python -u ./fetch_releases.py || exit_code=$?
+        
+        # Handle exit codes
+        if [ -z "$exit_code" ]; then
+          echo "Script completed successfully"
+          echo "new_data=true" >> $GITHUB_OUTPUT
+        else
+          echo "Script failed with exit code $exit_code"
+          exit $exit_code
+        fi
+    
+    - name: Display download statistics
+      if: steps.fetch_releases.outputs.new_data == 'true'
+      run: python ./get_downloads.py
+    
+    - name: Commit and push changes
+      if: steps.fetch_releases.outputs.new_data == 'true'
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Check if there are any changes
+        if [[ -n $(git status --porcelain) ]]; then
+          git add data/releases.json
+          git commit -m "Update release download data - $(date +'%Y-%m-%d')"
+          
+          # Pull latest changes before pushing
+          git pull origin main --rebase
+          
+          # Push changes
+          git push
+        else
+          echo "No new data to commit"
+        fi

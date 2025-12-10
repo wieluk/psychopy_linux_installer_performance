@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update script that fetches new performance data and merges it with existing data."""
+"""Fetch installation performance data from GitHub Actions workflow runs and merge with existing data."""
 import sys
 import json
 import subprocess
