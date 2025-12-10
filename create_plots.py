@@ -736,14 +736,16 @@ def create_installer_downloads_plot(releases):
         # Find the specific installer file downloads
         for asset in assets:
             if categorize_asset(asset['name']) == 'installer':
-                asset_name = asset.get('name', '')
+                asset_name = asset.get('name', 'unknown')
                 downloads = asset.get('download_count', 0)
                 
-                release_data.append({
-                    'tag': tag,
-                    'file': asset_name,
-                    'downloads': downloads
-                })
+                # Skip entries with no downloads or no file name
+                if downloads > 0 and asset_name and asset_name != 'unknown':
+                    release_data.append({
+                        'tag': tag,
+                        'file': asset_name,
+                        'downloads': downloads
+                    })
     
     if not release_data:
         print("⚠️  No installer downloads found")
@@ -825,7 +827,7 @@ def create_wx_wheel_downloads_plot(releases):
     
     bars = ax.barh(range(len(wheel_names)), downloads, color='darkorange', alpha=0.7)
     ax.set_yticks(range(len(wheel_names)))
-    ax.set_yticklabels(wheel_names, fontsize=7)
+    ax.set_yticklabels(wheel_names, fontsize=8)
     ax.set_xlabel('Total Downloads (across all releases)', fontsize=12)
     ax.set_ylabel('Wheel File (includes wxPython version and distro)', fontsize=12)
     ax.set_title('Total wx Wheel Downloads', fontsize=14, pad=20)
