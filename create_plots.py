@@ -826,13 +826,16 @@ def create_wx_wheel_downloads_plot(releases):
     for name in wheel_names:
         # Wheel name format: package-version-pyversion-abi-platform.whl
         # Example: wxPython-4.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-        parts = name.split('-')
+        
+        # Remove .whl extension first before splitting
+        name_without_ext = name.replace('.whl', '')
+        parts = name_without_ext.split('-')
+        
         if len(parts) >= 5:
             package = parts[0]  # wxPython
             version = parts[1]  # 4.2.0
-            # Platform is typically the last part before .whl
-            # Handle both simple and complex platform strings
-            platform_part = parts[-1].split('.whl')[0] if '.whl' in parts[-1] else parts[-1]
+            # Platform is the last part after splitting
+            platform_part = parts[-1]
             
             # Extract distro name from platform with priority order
             # Check for specific distro patterns in order of specificity
@@ -844,7 +847,7 @@ def create_wx_wheel_downloads_plot(releases):
                 distro = 'manylinux'
             elif 'linux' in platform_lower:
                 distro = 'linux'
-            elif 'win' in platform_lower:
+            elif 'win32' in platform_lower or 'win_amd64' in platform_lower or platform_lower.startswith('win'):
                 distro = 'windows'
             elif 'macos' in platform_lower or 'darwin' in platform_lower:
                 distro = 'macOS'
