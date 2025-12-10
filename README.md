@@ -18,3 +18,9 @@
 ## ubuntu-24.04 Subplots
 ![ubuntu-24.04 Subplots](duration_plots/ubuntu-24.04_subplots.png)
 
+## Total wx Wheel Downloads
+![Total wx Wheel Downloads](duration_plots/wx_wheel_downloads.png)
+
+## Download Summary by Asset Type
+![Download Summary by Asset Type](duration_plots/download_summary.png)
+
