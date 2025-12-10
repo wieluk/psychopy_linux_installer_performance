@@ -724,7 +724,7 @@ def create_averages_comparison_plot(df, releases):
 
 
 def create_installer_downloads_plot(releases):
-    """Create a bar plot showing installer downloads per release."""
+    """Create a bar plot showing psychopy_linux_installer downloads per release."""
     print("ℹ️  Creating installer downloads plot...")
     
     release_data = []
@@ -733,17 +733,19 @@ def create_installer_downloads_plot(releases):
         tag = release.get('tag_name', 'unknown')
         assets = release.get('assets', [])
         
-        installer_downloads = sum(
-            asset.get('download_count', 0)
-            for asset in assets
-            if categorize_asset(asset['name']) == 'installer'
-        )
-        
-        if installer_downloads > 0:
-            release_data.append({
-                'tag': tag,
-                'downloads': installer_downloads
-            })
+        # Find the specific installer file downloads
+        for asset in assets:
+            if categorize_asset(asset['name']) == 'installer':
+                asset_name = asset.get('name', 'unknown')
+                downloads = asset.get('download_count', 0)
+                
+                # Skip entries with no downloads or no file name
+                if downloads > 0 and asset_name and asset_name != 'unknown':
+                    release_data.append({
+                        'tag': tag,
+                        'file': asset_name,
+                        'downloads': downloads
+                    })
     
     if not release_data:
         print("⚠️  No installer downloads found")
@@ -757,17 +759,17 @@ def create_installer_downloads_plot(releases):
     if len(release_data) > max_releases_to_show:
         release_data = release_data[:max_releases_to_show]
     
-    tags = [r['tag'] for r in release_data]
+    labels = [f"{r['tag']}\n({r['file']})" for r in release_data]
     downloads = [r['downloads'] for r in release_data]
     
-    fig, ax = plt.subplots(figsize=(14, 8))
+    fig, ax = plt.subplots(figsize=(14, max(8, len(release_data) * 0.5)))
     
-    bars = ax.barh(range(len(tags)), downloads, color='steelblue', alpha=0.7)
-    ax.set_yticks(range(len(tags)))
-    ax.set_yticklabels(tags)
+    bars = ax.barh(range(len(labels)), downloads, color='steelblue', alpha=0.7)
+    ax.set_yticks(range(len(labels)))
+    ax.set_yticklabels(labels, fontsize=8)
     ax.set_xlabel('Downloads', fontsize=12)
-    ax.set_ylabel('Release', fontsize=12)
-    ax.set_title('Installer Downloads per Release', fontsize=14, pad=20)
+    ax.set_ylabel('Release (File)', fontsize=12)
+    ax.set_title('psychopy_linux_installer Downloads per Release', fontsize=14, pad=20)
     ax.grid(True, axis='x', linestyle='--', alpha=0.5)
     
     # Add value labels on bars
@@ -785,7 +787,7 @@ def create_installer_downloads_plot(releases):
 
 
 def create_wx_wheel_downloads_plot(releases):
-    """Create a bar plot showing total wx wheel downloads."""
+    """Create a bar plot showing wx wheel downloads with full names including distro."""
     print("ℹ️  Creating wx wheel downloads plot...")
     
     wheel_downloads = defaultdict(int)
@@ -800,7 +802,9 @@ def create_wx_wheel_downloads_plot(releases):
             # Only count wx wheels (ignore python wheels)
             if asset_type == 'wx_wheel':
                 downloads = asset.get('download_count', 0)
-                wheel_downloads[asset_name] += downloads
+                # Only include wheels with downloads and valid names
+                if downloads > 0 and asset_name:
+                    wheel_downloads[asset_name] += downloads
     
     if not wheel_downloads:
         print("⚠️  No wx wheel downloads found")
@@ -814,37 +818,21 @@ def create_wx_wheel_downloads_plot(releases):
     )
     
     # Limit for readability
-    max_wheels_to_show = 25
+    max_wheels_to_show = 30
     if len(sorted_wheels) > max_wheels_to_show:
         sorted_wheels = sorted_wheels[:max_wheels_to_show]
     
     wheel_names = [w[0] for w in sorted_wheels]
     downloads = [w[1] for w in sorted_wheels]
     
-    # Shorten wheel names for display
-    display_names = []
-    for name in wheel_names:
-        # Extract key parts of the wheel name
-        if len(name) > 40:
-            # Try to extract version info
-            parts = name.split('-')
-            if len(parts) >= 2:
-                display_name = f"{parts[0]}-{parts[1]}"
-            else:
-                display_name = name[:37] + "..."
-        else:
-            display_name = name
-        display_names.append(display_name)
+    fig, ax = plt.subplots(figsize=(14, max(10, len(wheel_names) * 0.4)))
     
-    fig, ax = plt.subplots(figsize=(14, 10))
-    
-    bars = ax.barh(range(len(display_names)), downloads, color='darkorange', alpha=0.7)
-    ax.set_yticks(range(len(display_names)))
-    ax.set_yticklabels(display_names, fontsize=8)
+    bars = ax.barh(range(len(wheel_names)), downloads, color='darkorange', alpha=0.7)
+    ax.set_yticks(range(len(wheel_names)))
+    ax.set_yticklabels(wheel_names, fontsize=8)
     ax.set_xlabel('Total Downloads (across all releases)', fontsize=12)
-    ax.set_ylabel('Wheel File', fontsize=12)
-    ax.set_title('Total wx Wheel Downloads (Python wheels in early releases ignored)', 
-                 fontsize=14, pad=20)
+    ax.set_ylabel('Wheel File (includes wxPython version and distro)', fontsize=12)
+    ax.set_title('Total wx Wheel Downloads', fontsize=14, pad=20)
     ax.grid(True, axis='x', linestyle='--', alpha=0.5)
     
     # Add value labels on bars
@@ -882,10 +870,9 @@ def create_download_summary_plot(releases):
         print("⚠️  No download data found")
         return None
     
-    # Create pie chart and bar chart side by side
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    # Create only bar chart (pie chart removed as requested)
+    fig, ax = plt.subplots(figsize=(10, 7))
     
-    # Pie chart
     labels = []
     sizes = []
     colors = ['steelblue', 'darkorange', 'lightcoral', 'lightgray']
@@ -896,35 +883,22 @@ def create_download_summary_plot(releases):
             labels.append(asset_type.replace('_', ' ').title())
             sizes.append(count)
     
-    if sizes:
-        wedges, texts, autotexts = ax1.pie(
-            sizes, labels=labels, colors=colors[:len(labels)],
-            autopct=lambda pct: f'{pct:.1f}%\n({int(pct/100*sum(sizes)):,})',
-            startangle=90
-        )
-        for autotext in autotexts:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
-            autotext.set_fontsize(10)
-    
-    ax1.set_title('Download Distribution by Asset Type', fontsize=14, pad=20)
-    
     # Bar chart
     if labels and sizes:
-        bars = ax2.bar(labels, sizes, color=colors[:len(labels)], alpha=0.7)
-        ax2.set_ylabel('Downloads', fontsize=12)
-        ax2.set_title('Total Downloads by Asset Type', fontsize=14, pad=20)
-        ax2.grid(True, axis='y', linestyle='--', alpha=0.5)
+        bars = ax.bar(labels, sizes, color=colors[:len(labels)], alpha=0.7)
+        ax.set_ylabel('Downloads', fontsize=12)
+        ax.set_title('Total Downloads by Asset Type', fontsize=14, pad=20)
+        ax.grid(True, axis='y', linestyle='--', alpha=0.5)
         
         # Add value labels on bars
         for bar in bars:
             height = bar.get_height()
-            ax2.text(bar.get_x() + bar.get_width()/2., height,
+            ax.text(bar.get_x() + bar.get_width()/2., height,
                     f'{int(height):,}',
                     ha='center', va='bottom', fontsize=10)
         
         # Rotate x-axis labels if needed
-        plt.setp(ax2.xaxis.get_majorticklabels(), rotation=45, ha='right')
+        plt.setp(ax.xaxis.get_majorticklabels(), rotation=45, ha='right')
     
     plt.tight_layout()
     
