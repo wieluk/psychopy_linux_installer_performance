@@ -821,19 +821,33 @@ def create_wx_wheel_downloads_plot(releases):
     wheel_names = [w[0] for w in sorted_wheels]
     downloads = [w[1] for w in sorted_wheels]
     
-    # Shorten wheel names for display
+    # Extract version and distro info for display
     display_names = []
     for name in wheel_names:
-        # Extract key parts of the wheel name
-        if len(name) > 40:
-            # Try to extract version info
-            parts = name.split('-')
-            if len(parts) >= 2:
-                display_name = f"{parts[0]}-{parts[1]}"
-            else:
-                display_name = name[:37] + "..."
+        # Wheel name format: package-version-pyversion-abi-platform.whl
+        # Example: wxPython-4.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        parts = name.split('-')
+        if len(parts) >= 5:
+            package = parts[0]  # wxPython
+            version = parts[1]  # 4.2.0
+            # Platform is typically the last part before .whl
+            platform_part = parts[-1].replace('.whl', '')  # e.g., manylinux_2_17_x86_64.manylinux2014_x86_64
+            
+            # Extract distro name from platform
+            distro = "unknown"
+            if 'manylinux' in platform_part:
+                distro = 'manylinux'
+            elif 'musllinux' in platform_part:
+                distro = 'musllinux'
+            elif 'linux' in platform_part:
+                distro = 'linux'
+            
+            display_name = f"{package}-{version} ({distro})"
+        elif len(parts) >= 2:
+            # Fallback for non-standard names
+            display_name = f"{parts[0]}-{parts[1]}"
         else:
-            display_name = name
+            display_name = name[:40] + "..." if len(name) > 40 else name
         display_names.append(display_name)
     
     fig, ax = plt.subplots(figsize=(14, 10))
@@ -842,8 +856,8 @@ def create_wx_wheel_downloads_plot(releases):
     ax.set_yticks(range(len(display_names)))
     ax.set_yticklabels(display_names, fontsize=8)
     ax.set_xlabel('Total Downloads (across all releases)', fontsize=12)
-    ax.set_ylabel('Wheel File', fontsize=12)
-    ax.set_title('Total wx Wheel Downloads (Python wheels in early releases ignored)', 
+    ax.set_ylabel('wxPython Version (Distro)', fontsize=12)
+    ax.set_title('Total wx Wheel Downloads by Version and Distro', 
                  fontsize=14, pad=20)
     ax.grid(True, axis='x', linestyle='--', alpha=0.5)
     
@@ -882,10 +896,10 @@ def create_download_summary_plot(releases):
         print("⚠️  No download data found")
         return None
     
-    # Create pie chart and bar chart side by side
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    # Create single bar chart
+    fig, ax = plt.subplots(figsize=(10, 7))
     
-    # Pie chart
+    # Prepare data for bar chart
     labels = []
     sizes = []
     colors = ['steelblue', 'darkorange', 'lightcoral', 'lightgray']
@@ -896,35 +910,22 @@ def create_download_summary_plot(releases):
             labels.append(asset_type.replace('_', ' ').title())
             sizes.append(count)
     
-    if sizes:
-        wedges, texts, autotexts = ax1.pie(
-            sizes, labels=labels, colors=colors[:len(labels)],
-            autopct=lambda pct: f'{pct:.1f}%\n({int(pct/100*sum(sizes)):,})',
-            startangle=90
-        )
-        for autotext in autotexts:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
-            autotext.set_fontsize(10)
-    
-    ax1.set_title('Download Distribution by Asset Type', fontsize=14, pad=20)
-    
     # Bar chart
     if labels and sizes:
-        bars = ax2.bar(labels, sizes, color=colors[:len(labels)], alpha=0.7)
-        ax2.set_ylabel('Downloads', fontsize=12)
-        ax2.set_title('Total Downloads by Asset Type', fontsize=14, pad=20)
-        ax2.grid(True, axis='y', linestyle='--', alpha=0.5)
+        bars = ax.bar(labels, sizes, color=colors[:len(labels)], alpha=0.7)
+        ax.set_ylabel('Downloads', fontsize=12)
+        ax.set_title('Total Downloads by Asset Type', fontsize=14, pad=20)
+        ax.grid(True, axis='y', linestyle='--', alpha=0.5)
         
         # Add value labels on bars
         for bar in bars:
             height = bar.get_height()
-            ax2.text(bar.get_x() + bar.get_width()/2., height,
+            ax.text(bar.get_x() + bar.get_width()/2., height,
                     f'{int(height):,}',
                     ha='center', va='bottom', fontsize=10)
         
         # Rotate x-axis labels if needed
-        plt.setp(ax2.xaxis.get_majorticklabels(), rotation=45, ha='right')
+        plt.setp(ax.xaxis.get_majorticklabels(), rotation=45, ha='right')
     
     plt.tight_layout()
     
