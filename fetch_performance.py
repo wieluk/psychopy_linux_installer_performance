@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update script that fetches new performance data and merges it with existing data."""
+"""Fetch installation performance data from GitHub Actions workflow runs and merge with existing data."""
 import sys
 import json
 import subprocess
@@ -320,7 +320,12 @@ def save_data(df, raw_new_data, actual_new_count):
 
 
 def main():
-    """Main update process."""
+    """Main update process.
+    
+    Exit codes:
+        0: Success with new data
+        1: Success but no new data (workflow uses this to skip plotting/commit steps)
+    """
     print("🚀 Starting performance data update...")
 
     existing_df = load_existing_data()
@@ -329,13 +334,13 @@ def main():
 
     if new_df.empty:
         print("✅ Update complete! No new data found.")
-        sys.exit(1)
+        sys.exit(1)  # Signal to workflow: no new data, skip remaining steps
 
     final_df, actual_new_count = merge_and_deduplicate(existing_df, new_df)
 
     if actual_new_count <= 0:
         print("✅ Update complete! No new records added (all data were duplicates).")
-        sys.exit(1)
+        sys.exit(1)  # Signal to workflow: no new data, skip remaining steps
 
     save_data(final_df, raw_new_data, actual_new_count)
 

@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """Fetch and display download statistics for releases."""
+import json
 from collections import defaultdict
+from pathlib import Path
 
-from config import REPO
+from config import REPO, DATA_DIR
 from github_utils import fetch_releases_with_assets, categorize_asset
+
+
+# File where release data is stored
+RELEASES_FILE = DATA_DIR / "releases.json"
 
 
 def display_installer_downloads(releases):
@@ -158,12 +164,28 @@ def display_summary_statistics(releases):
     print("=" * 80)
 
 
+def load_releases():
+    """Load releases from saved file or fetch from GitHub if not available."""
+    if RELEASES_FILE.exists():
+        print(f"ℹ️  Loading releases from {RELEASES_FILE}")
+        try:
+            with open(RELEASES_FILE, 'r', encoding='utf-8') as f:
+                releases = json.load(f)
+            print(f"ℹ️  Loaded {len(releases)} releases from file")
+            return releases
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"⚠️  Error reading saved releases: {e}")
+            print("ℹ️  Falling back to fetching from GitHub...")
+    
+    return fetch_releases_with_assets()
+
+
 def main():
     """Main function to fetch and display download statistics."""
     print("📊 Fetching download statistics for repository: " + REPO)
     print()
     
-    releases = fetch_releases_with_assets()
+    releases = load_releases()
     
     if not releases:
         print("❌ No releases found or error fetching releases")
