@@ -844,6 +844,10 @@ def create_wx_wheel_downloads_plot(releases):
                 distro = 'manylinux'
             elif 'linux' in platform_lower:
                 distro = 'linux'
+            elif 'win' in platform_lower:
+                distro = 'windows'
+            elif 'macos' in platform_lower or 'darwin' in platform_lower:
+                distro = 'macOS'
             
             display_name = f"{package}-{version} ({distro})"
         elif len(parts) >= 2:
