@@ -802,7 +802,9 @@ def create_wx_wheel_downloads_plot(releases):
             # Only count wx wheels (ignore python wheels)
             if asset_type == 'wx_wheel':
                 downloads = asset.get('download_count', 0)
-                wheel_downloads[asset_name] += downloads
+                # Only include wheels with downloads and valid names
+                if downloads > 0 and asset_name:
+                    wheel_downloads[asset_name] += downloads
     
     if not wheel_downloads:
         print("⚠️  No wx wheel downloads found")
