@@ -49,8 +49,8 @@ def categorize_asset(asset_name):
     """
     name_lower = asset_name.lower()
     
-    # Installer files (typically .sh scripts)
-    if name_lower.endswith('.sh'):
+    # Installer files
+    if name_lower.endswith('.sh') or 'psychopy_linux_installer' in name_lower:
         return 'installer'
     
     # Wheel files

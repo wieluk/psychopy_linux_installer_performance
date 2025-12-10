@@ -18,6 +18,9 @@
 ## ubuntu-24.04 Subplots
 ![ubuntu-24.04 Subplots](duration_plots/ubuntu-24.04_subplots.png)
 
+## Installer Downloads per Release
+![Installer Downloads per Release](duration_plots/installer_downloads.png)
+
 ## Total wx Wheel Downloads
 ![Total wx Wheel Downloads](duration_plots/wx_wheel_downloads.png)
 

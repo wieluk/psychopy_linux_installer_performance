@@ -822,6 +822,9 @@ def create_wx_wheel_downloads_plot(releases):
     if len(sorted_wheels) > max_wheels_to_show:
         sorted_wheels = sorted_wheels[:max_wheels_to_show]
     
+    # Reverse so highest downloads appear at top of horizontal bar chart
+    sorted_wheels = sorted_wheels[::-1]
+    
     wheel_names = [w[0] for w in sorted_wheels]
     downloads = [w[1] for w in sorted_wheels]
     
@@ -848,65 +851,6 @@ def create_wx_wheel_downloads_plot(releases):
     total_downloads = sum(downloads)
     print(f"✅ Wx wheel downloads plot → {path}")
     print(f"   Total wx wheel downloads: {total_downloads:,}")
-    return path
-
-
-def create_download_summary_plot(releases):
-    """Create a summary plot showing download distribution by asset type."""
-    print("ℹ️  Creating download summary plot...")
-    
-    downloads_by_type = defaultdict(int)
-    
-    for release in releases:
-        assets = release.get('assets', [])
-        
-        for asset in assets:
-            asset_name = asset.get('name', '')
-            downloads = asset.get('download_count', 0)
-            asset_type = categorize_asset(asset_name)
-            downloads_by_type[asset_type] += downloads
-    
-    if not downloads_by_type:
-        print("⚠️  No download data found")
-        return None
-    
-    # Create only bar chart (pie chart removed as requested)
-    fig, ax = plt.subplots(figsize=(10, 7))
-    
-    labels = []
-    sizes = []
-    colors = ['steelblue', 'darkorange', 'lightcoral', 'lightgray']
-    
-    for asset_type in ['installer', 'wx_wheel', 'python_wheel', 'other']:
-        count = downloads_by_type.get(asset_type, 0)
-        if count > 0:
-            labels.append(asset_type.replace('_', ' ').title())
-            sizes.append(count)
-    
-    # Bar chart
-    if labels and sizes:
-        bars = ax.bar(labels, sizes, color=colors[:len(labels)], alpha=0.7)
-        ax.set_ylabel('Downloads', fontsize=12)
-        ax.set_title('Total Downloads by Asset Type', fontsize=14, pad=20)
-        ax.grid(True, axis='y', linestyle='--', alpha=0.5)
-        
-        # Add value labels on bars
-        for bar in bars:
-            height = bar.get_height()
-            ax.text(bar.get_x() + bar.get_width()/2., height,
-                    f'{int(height):,}',
-                    ha='center', va='bottom', fontsize=10)
-        
-        # Rotate x-axis labels if needed
-        plt.setp(ax.xaxis.get_majorticklabels(), rotation=45, ha='right')
-    
-    plt.tight_layout()
-    
-    path = PLOTS_DIR / "download_summary.png"
-    fig.savefig(path, dpi=PlotConfig.DPI, bbox_inches='tight')
-    plt.close(fig)
-    
-    print(f"✅ Download summary plot → {path}")
     return path
 
 

@@ -14,17 +14,10 @@ RELEASES_FILE = DATA_DIR / "releases.json"
 
 def display_installer_downloads(releases):
     """Display download counts for installer files in each release."""
-    print("\n" + "=" * 80)
-    print("INSTALLER FILE DOWNLOADS PER RELEASE")
-    print("=" * 80)
-    
     total_installer_downloads = 0
     releases_with_installers = 0
     
     for release in releases:
-        tag = release.get('tag_name', 'unknown')
-        name = release.get('name', tag)
-        published = release.get('published_at', 'unknown')
         assets = release.get('assets', [])
         
         installer_assets = [
@@ -34,19 +27,11 @@ def display_installer_downloads(releases):
         
         if installer_assets:
             releases_with_installers += 1
-            print(f"\n📦 Release: {name} ({tag})")
-            print(f"   Published: {published}")
-            
             for asset in installer_assets:
                 downloads = asset.get('download_count', 0)
-                asset_name = asset.get('name', 'unknown')
                 total_installer_downloads += downloads
-                print(f"   └─ {asset_name}: {downloads:,} downloads")
     
-    print(f"\n{'─' * 80}")
-    print(f"Total: {releases_with_installers} releases with installers")
-    print(f"Total installer downloads: {total_installer_downloads:,}")
-    print("=" * 80)
+    print(f"\nInstaller downloads: {total_installer_downloads:,} ({releases_with_installers} releases)")
 
 
 def display_wx_wheel_downloads(releases, ignore_python_wheels=True):
@@ -56,10 +41,6 @@ def display_wx_wheel_downloads(releases, ignore_python_wheels=True):
         releases: List of release data from GitHub API
         ignore_python_wheels: If True, ignores python wheels in the count
     """
-    print("\n" + "=" * 80)
-    print("WX WHEEL DOWNLOADS (Total Across All Releases)")
-    print("=" * 80)
-    
     # Aggregate downloads by wheel filename
     wheel_downloads = defaultdict(int)
     wheel_releases = defaultdict(list)
@@ -86,58 +67,15 @@ def display_wx_wheel_downloads(releases, ignore_python_wheels=True):
                 })
     
     if not wheel_downloads:
-        print("\n⚠️  No wx wheel files found in releases")
-        print("=" * 80)
+        print("No wx wheel files found")
         return
     
-    # Sort by total downloads (descending)
-    sorted_wheels = sorted(
-        wheel_downloads.items(), 
-        key=lambda x: x[1], 
-        reverse=True
-    )
-    
-    total_wx_downloads = 0
-    
-    print(f"\nFound {len(sorted_wheels)} unique wx wheel files:")
-    print()
-    
-    for wheel_name, total_downloads in sorted_wheels:
-        total_wx_downloads += total_downloads
-        num_releases = len(wheel_releases[wheel_name])
-        
-        print(f"🔧 {wheel_name}")
-        print(f"   Total downloads: {total_downloads:,}")
-        print(f"   Appears in {num_releases} release(s)")
-        
-        # Show breakdown by release if there are multiple
-        if num_releases > 1:
-            print(f"   Breakdown by release:")
-            # Limit to top 5 releases for readability
-            sorted_releases = sorted(
-                wheel_releases[wheel_name], 
-                key=lambda x: x['downloads'], 
-                reverse=True
-            )
-            for i, release_info in enumerate(sorted_releases[:5]):
-                print(f"      └─ {release_info['tag']}: {release_info['downloads']:,}")
-            
-            if num_releases > 5:
-                remaining = num_releases - 5
-                print(f"      ... and {remaining} more release(s)")
-        print()
-    
-    print(f"{'─' * 80}")
-    print(f"Total wx wheel downloads: {total_wx_downloads:,}")
-    print("=" * 80)
+    total_wx_downloads = sum(wheel_downloads.values())
+    print(f"WX wheel downloads: {total_wx_downloads:,} ({len(wheel_downloads)} unique wheels)")
 
 
 def display_summary_statistics(releases):
     """Display summary statistics for all downloads."""
-    print("\n" + "=" * 80)
-    print("DOWNLOAD SUMMARY STATISTICS")
-    print("=" * 80)
-    
     total_downloads = 0
     downloads_by_type = defaultdict(int)
     
@@ -152,51 +90,38 @@ def display_summary_statistics(releases):
             total_downloads += downloads
             downloads_by_type[asset_type] += downloads
     
-    print(f"\nTotal releases: {len(releases)}")
-    print(f"Total downloads (all assets): {total_downloads:,}")
-    print(f"\nBreakdown by asset type:")
-    
-    for asset_type in ['installer', 'wx_wheel', 'python_wheel', 'other']:
-        count = downloads_by_type.get(asset_type, 0)
-        percentage = (count / total_downloads * 100) if total_downloads > 0 else 0
-        print(f"  {asset_type.replace('_', ' ').title()}: {count:,} ({percentage:.1f}%)")
-    
-    print("=" * 80)
+    print(f"\nTotal: {total_downloads:,} downloads across {len(releases)} releases")
+    print(f"Breakdown: Installer {downloads_by_type['installer']:,} | WX wheels {downloads_by_type['wx_wheel']:,} | Python wheels {downloads_by_type['python_wheel']:,} | Other {downloads_by_type['other']:,}")
 
 
 def load_releases():
     """Load releases from saved file or fetch from GitHub if not available."""
     if RELEASES_FILE.exists():
-        print(f"ℹ️  Loading releases from {RELEASES_FILE}")
         try:
             with open(RELEASES_FILE, 'r', encoding='utf-8') as f:
                 releases = json.load(f)
-            print(f"ℹ️  Loaded {len(releases)} releases from file")
+            print(f"Loaded {len(releases)} releases from cache")
             return releases
         except (json.JSONDecodeError, KeyError) as e:
-            print(f"⚠️  Error reading saved releases: {e}")
-            print("ℹ️  Falling back to fetching from GitHub...")
+            print(f"Error reading cache, fetching from GitHub...")
     
     return fetch_releases_with_assets()
 
 
 def main():
     """Main function to fetch and display download statistics."""
-    print("📊 Fetching download statistics for repository: " + REPO)
-    print()
+    print(f"Download statistics for {REPO}:")
     
     releases = load_releases()
     
     if not releases:
-        print("❌ No releases found or error fetching releases")
+        print("No releases found")
         return
     
     # Display statistics
     display_installer_downloads(releases)
     display_wx_wheel_downloads(releases, ignore_python_wheels=True)
     display_summary_statistics(releases)
-    
-    print("\n✅ Download statistics retrieval complete!")
 
 
 if __name__ == "__main__":
