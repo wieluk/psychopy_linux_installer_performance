@@ -827,8 +827,13 @@ def create_wx_wheel_downloads_plot(releases):
         # Wheel name format: package-version-pyversion-abi-platform.whl
         # Example: wxPython-4.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
         
-        # Remove .whl extension only if it's at the end
-        name_without_ext = name[:-4] if name.endswith('.whl') else name
+        # Only apply wheel-specific parsing if this is actually a wheel file
+        if not name.endswith('.whl'):
+            display_names.append(name[:40] + "..." if len(name) > 40 else name)
+            continue
+        
+        # Remove .whl extension
+        name_without_ext = name[:-4]
         parts = name_without_ext.split('-')
         
         if len(parts) >= 5:
