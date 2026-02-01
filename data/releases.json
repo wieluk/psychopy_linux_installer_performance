@@ -68,7 +68,7 @@
         "state": "uploaded",
         "size": 110349,
         "digest": "sha256:e7b5d50d76e224d18cba0f88253a0b357c4c90fd6c06932fdcd1565ed22e27cd",
-        "download_count": 595,
+        "download_count": 606,
         "created_at": "2025-12-04T06:13:23Z",
         "updated_at": "2025-12-04T06:13:24Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.5/psychopy_linux_installer"
@@ -83247,7 +83247,7 @@
         "state": "uploaded",
         "size": 144406246,
         "digest": "sha256:a022c4f795c541532b1a74eeeb3177380d48fd26cbbc62b424964d5acedc77e9",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-06-26T19:19:56Z",
         "updated_at": "2025-06-26T19:19:59Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.6/wxPython-4.1.1-cp310-cp310-linux_x86_64-debian-12.whl"
@@ -146820,7 +146820,7 @@
         "state": "uploaded",
         "size": 73733502,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-05-28T04:28:24Z",
         "updated_at": "2025-05-28T04:28:29Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.7.0/python-3.10.17-linux_x86_64-centos-9.tar.gz"
