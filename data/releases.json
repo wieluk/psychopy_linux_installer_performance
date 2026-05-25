@@ -133448,7 +133448,7 @@
         "state": "uploaded",
         "size": 148925101,
         "digest": "sha256:1bcc25d96bdee1e33d7fdf69ddb879ae5879fc9a8c24af54682c28304dcc61e5",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-06-16T18:52:59Z",
         "updated_at": "2025-06-16T18:53:04Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.1/wxPython-4.2.0-cp38-cp38-linux_x86_64-ubuntu-24.whl"
