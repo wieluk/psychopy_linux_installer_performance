@@ -68,7 +68,7 @@
         "state": "uploaded",
         "size": 115627,
         "digest": "sha256:afae9c6867f7dd93e2e76c061e14fda775be554dae241ce001293424b642c61e",
-        "download_count": 696,
+        "download_count": 708,
         "created_at": "2026-04-09T09:41:25Z",
         "updated_at": "2026-04-09T09:41:25Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.7/psychopy_linux_installer"
@@ -144984,7 +144984,7 @@
         "state": "uploaded",
         "size": 73142711,
         "digest": "sha256:af277cb9de037eca1920beb496932faa22377cbe4bf4e107bd594a0bb89a291e",
-        "download_count": 8,
+        "download_count": 9,
         "created_at": "2025-06-11T15:08:44Z",
         "updated_at": "2025-06-11T15:09:23Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.7.2/python-3.10.18-linux_x86_64-ubuntu-24.tar.gz"
