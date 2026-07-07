@@ -68,7 +68,7 @@
         "state": "uploaded",
         "size": 115627,
         "digest": "sha256:afae9c6867f7dd93e2e76c061e14fda775be554dae241ce001293424b642c61e",
-        "download_count": 831,
+        "download_count": 837,
         "created_at": "2026-04-09T09:41:25Z",
         "updated_at": "2026-04-09T09:41:25Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.7/psychopy_linux_installer"
@@ -2660,7 +2660,7 @@
         "state": "uploaded",
         "size": 148925101,
         "digest": "sha256:1bcc25d96bdee1e33d7fdf69ddb879ae5879fc9a8c24af54682c28304dcc61e5",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2026-04-09T09:49:51Z",
         "updated_at": "2026-04-09T09:49:56Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.7/wxPython-4.2.0-cp38-cp38-linux_x86_64-ubuntu-24.whl"
@@ -3452,7 +3452,7 @@
         "state": "uploaded",
         "size": 150123404,
         "digest": "sha256:8df53fc944aaef87e28cebc1dee8c2ee97f256e982e8f495861c03db70ebc1a7",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2026-04-09T09:52:29Z",
         "updated_at": "2026-04-09T09:52:33Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.7/wxPython-4.2.1-cp310-cp310-linux_x86_64-pop-22.whl"
@@ -6296,7 +6296,7 @@
         "state": "uploaded",
         "size": 150516070,
         "digest": "sha256:0d456923c924f9b46e7184d00162e91945cb66b1609789ffff07be427b49e690",
-        "download_count": 37,
+        "download_count": 39,
         "created_at": "2026-04-09T10:01:38Z",
         "updated_at": "2026-04-09T10:01:42Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.7/wxPython-4.2.3-cp310-cp310-linux_x86_64-linuxmint-22.whl"
@@ -7168,7 +7168,7 @@
         "state": "uploaded",
         "size": 114024,
         "digest": "sha256:70e3fc072fc77a1ff2ee4813042f55433849bc42a71d1d1fb0b797ddba29fc5f",
-        "download_count": 123,
+        "download_count": 127,
         "created_at": "2026-04-07T11:44:09Z",
         "updated_at": "2026-04-07T11:44:09Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.6/psychopy_linux_installer"
@@ -7204,7 +7204,7 @@
         "state": "uploaded",
         "size": 11497,
         "digest": "sha256:02568706662f272bd031ca4ea7a56142106aac0e85e0858d2ed3f79372ef1f80",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2026-04-07T11:44:09Z",
         "updated_at": "2026-04-07T11:44:09Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.6/README.md"
@@ -8176,7 +8176,7 @@
         "state": "uploaded",
         "size": 144715094,
         "digest": "sha256:29a51e9256392b1f622786c96f6c8a586a2ed647949485d66b57456406c7884a",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2026-04-07T11:48:37Z",
         "updated_at": "2026-04-07T11:48:42Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.6/wxPython-4.1.1-cp39-cp39-linux_x86_64-centos-9.whl"
@@ -8356,7 +8356,7 @@
         "state": "uploaded",
         "size": 149995376,
         "digest": "sha256:b31f917d3b1a4f90fa10b6c6c04a9274cea9a0ce0f780f5f4e2ac3d71285ec58",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2026-04-07T11:49:11Z",
         "updated_at": "2026-04-07T11:49:15Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.6/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-40.whl"
@@ -9148,7 +9148,7 @@
         "state": "uploaded",
         "size": 154811144,
         "digest": "sha256:79266abd01c6c1fc6f3935a5814664903f02a5766eafb8c8366cf6972547e6dd",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2026-04-07T11:51:41Z",
         "updated_at": "2026-04-07T11:51:47Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.6/wxPython-4.2.0-cp310-cp310-linux_x86_64-ubuntu-20.whl"
@@ -9868,7 +9868,7 @@
         "state": "uploaded",
         "size": 149297886,
         "digest": "sha256:b83d290e85666d40370e43a8a188497e242690802799d70d599e74e0151f8fcc",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2026-04-07T11:53:59Z",
         "updated_at": "2026-04-07T11:54:04Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.6/wxPython-4.2.0-cp39-cp39-linux_x86_64-debian-12.whl"
@@ -15420,7 +15420,7 @@
         "state": "uploaded",
         "size": 143778069,
         "digest": "sha256:f40cdbb8c710a303fb6d7cdc84b002e43566d042e99fed664d9c1921595948a3",
-        "download_count": 4,
+        "download_count": 5,
         "created_at": "2025-12-04T06:16:54Z",
         "updated_at": "2025-12-04T06:16:58Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.5/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-39.whl"
@@ -17400,7 +17400,7 @@
         "state": "uploaded",
         "size": 148911007,
         "digest": "sha256:25685c2fcb79d006c6224ce08fabd189ff490711f001889f70582fe846a47055",
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2025-12-04T06:23:03Z",
         "updated_at": "2025-12-04T06:23:08Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.5/wxPython-4.2.0-cp39-cp39-linux_x86_64-ubuntu-24.whl"
@@ -22232,7 +22232,7 @@
         "state": "uploaded",
         "size": 144744511,
         "digest": "sha256:03d9f21fb3d7d8100b5e10d4862363743b9f39be57d3a89e2ab7bec82dd8746f",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-10-19T08:25:02Z",
         "updated_at": "2025-10-19T08:25:07Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.4/wxPython-4.1.1-cp38-cp38-linux_x86_64-rocky-9.whl"
@@ -22736,7 +22736,7 @@
         "state": "uploaded",
         "size": 144654580,
         "digest": "sha256:aeccf78cb436319bb61c9b6fcf4a9e4e211b8043beb21a77535b8f5fd259d432",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-10-19T08:27:30Z",
         "updated_at": "2025-10-19T08:27:35Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.4/wxPython-4.1.1-cp39-cp39-linux_x86_64-pop-22.whl"
@@ -23528,7 +23528,7 @@
         "state": "uploaded",
         "size": 149303980,
         "digest": "sha256:d079842e1918d13968bfcd27ab4f98258db92b7b4bdc9ed9e1aafc7a9877ee31",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-10-19T08:31:18Z",
         "updated_at": "2025-10-19T08:31:23Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.4/wxPython-4.2.0-cp38-cp38-linux_x86_64-debian-12.whl"
@@ -29691,7 +29691,7 @@
         "state": "uploaded",
         "size": 149993772,
         "digest": "sha256:4e41d620664b73827f88e902bc76f6173437e4a51a7f052d7bd7c09d322c7725",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-10-04T06:51:46Z",
         "updated_at": "2025-10-04T06:51:51Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.3/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-41.whl"
@@ -35603,7 +35603,7 @@
         "state": "uploaded",
         "size": 11247,
         "digest": "sha256:600833dc8240954c1d6fdb0f6e7c6a8d2d606448fdddbd94ba5abad0115bb7eb",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-09-20T06:06:26Z",
         "updated_at": "2025-09-20T06:06:27Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.2/README.md"
@@ -37223,7 +37223,7 @@
         "state": "uploaded",
         "size": 150892640,
         "digest": "sha256:b9e2b2b7b0524af63c9a9053edc3cc3cfbc59e263929f7c28c4f98174267341b",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-09-20T06:11:38Z",
         "updated_at": "2025-09-20T06:11:42Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.2/wxPython-4.2.0-cp310-cp310-linux_x86_64-debian-13.whl"
@@ -37871,7 +37871,7 @@
         "state": "uploaded",
         "size": 154999525,
         "digest": "sha256:e6b5bb5f8f4a656a9756b1263a16c3eaa8fa37fb10312adad22f9ad850ab8261",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-09-20T06:13:35Z",
         "updated_at": "2025-09-20T06:13:39Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.2/wxPython-4.2.0-cp38-cp38-linux_x86_64-fedora-41.whl"
@@ -38411,7 +38411,7 @@
         "state": "uploaded",
         "size": 154994815,
         "digest": "sha256:c23e9fd6c651676db6a591abd5886a09de0c242e69ac3c30ef5118dfe62693a3",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-09-20T06:15:11Z",
         "updated_at": "2025-09-20T06:15:15Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.2/wxPython-4.2.0-cp39-cp39-linux_x86_64-fedora-41.whl"
@@ -43315,7 +43315,7 @@
         "state": "uploaded",
         "size": 150006164,
         "digest": "sha256:1bb5a0a38cf0a9e570c65a6ec99f348335666faf7d7e7ed8f590d7884f22f147",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-09-07T12:14:41Z",
         "updated_at": "2025-09-07T12:14:45Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.1/wxPython-4.1.1-cp38-cp38-linux_x86_64-fedora-40.whl"
@@ -43819,7 +43819,7 @@
         "state": "uploaded",
         "size": 143778069,
         "digest": "sha256:f40cdbb8c710a303fb6d7cdc84b002e43566d042e99fed664d9c1921595948a3",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-09-07T12:16:19Z",
         "updated_at": "2025-09-07T12:16:23Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.1/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-39.whl"
@@ -44683,7 +44683,7 @@
         "state": "uploaded",
         "size": 149726021,
         "digest": "sha256:e09337a2b0df6450eb797eeffdfefc37869de3690967926966afe21499e72f18",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-09-07T12:19:20Z",
         "updated_at": "2025-09-07T12:19:23Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.1/wxPython-4.2.0-cp310-cp310-linux_x86_64-ubuntu-22.whl"
@@ -45619,7 +45619,7 @@
         "state": "uploaded",
         "size": 137847050,
         "digest": "sha256:8377e3e5ddeb16c2389c9ee63677c5e6c478a5ae9db5b88d9ee760c75967fdfc",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-09-07T12:22:27Z",
         "updated_at": "2025-09-07T12:22:30Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.1/wxPython-4.2.0-cp39-cp39-linux_x86_64-opensuse-leap-15.whl"
@@ -50703,7 +50703,7 @@
         "state": "uploaded",
         "size": 144673796,
         "digest": "sha256:e5eeff49bfb7bc8f2c9798b871fcbcb5565acc131203968d9add37989c866588",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-28T07:29:40Z",
         "updated_at": "2025-08-28T07:29:47Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.1.1-cp38-cp38-linux_x86_64-ubuntu-22.whl"
@@ -51567,7 +51567,7 @@
         "state": "uploaded",
         "size": 149018827,
         "digest": "sha256:bd01136aa5b735d6f7276bc2dda2c79988970494f15ec3a4b2d2a99687dfebc3",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-28T07:35:44Z",
         "updated_at": "2025-08-28T07:35:52Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.2.0-cp310-cp310-linux_x86_64-linuxmint-22.whl"
@@ -51927,7 +51927,7 @@
         "state": "uploaded",
         "size": 149303980,
         "digest": "sha256:d079842e1918d13968bfcd27ab4f98258db92b7b4bdc9ed9e1aafc7a9877ee31",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-28T07:29:30Z",
         "updated_at": "2025-08-28T07:31:36Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.2.0-cp38-cp38-linux_x86_64-debian-12.whl"
@@ -52359,7 +52359,7 @@
         "state": "uploaded",
         "size": 148925101,
         "digest": "sha256:1bcc25d96bdee1e33d7fdf69ddb879ae5879fc9a8c24af54682c28304dcc61e5",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-28T07:25:13Z",
         "updated_at": "2025-08-28T07:27:20Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.2.0-cp38-cp38-linux_x86_64-ubuntu-24.whl"
@@ -54339,7 +54339,7 @@
         "state": "uploaded",
         "size": 154639703,
         "digest": "sha256:4c3cff51a15c41f451f5de2a2ea52abe82fed8676450ed58f0e243d100c1349f",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-28T07:39:03Z",
         "updated_at": "2025-08-28T07:39:10Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.2.2-cp310-cp310-linux_x86_64-fedora-41.whl"
@@ -55995,7 +55995,7 @@
         "state": "uploaded",
         "size": 150516070,
         "digest": "sha256:0d456923c924f9b46e7184d00162e91945cb66b1609789ffff07be427b49e690",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-28T07:32:41Z",
         "updated_at": "2025-08-28T07:34:46Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.2.3-cp310-cp310-linux_x86_64-linuxmint-22.whl"
@@ -56175,7 +56175,7 @@
         "state": "uploaded",
         "size": 156399820,
         "digest": "sha256:157b4549c6c9bba2cb9b6aae3ec40bcc870187f88ad109d34947fffcbb7cf7cc",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-28T07:37:37Z",
         "updated_at": "2025-08-28T07:37:44Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.2.0/wxPython-4.2.3-cp310-cp310-linux_x86_64-ubuntu-20.whl"
@@ -56974,7 +56974,7 @@
         "state": "uploaded",
         "size": 133011827,
         "digest": "sha256:6cca38a130306772e8893c59fd647f260d6fd4867868505530d24f8eb253d968",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:44:54Z",
         "updated_at": "2025-08-21T07:44:59Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.1.1-cp310-cp310-linux_x86_64-debian-11.whl"
@@ -57226,7 +57226,7 @@
         "state": "uploaded",
         "size": 149920145,
         "digest": "sha256:05a521468b0ff0025ada01a86be83847e0a03221dfae327306e7b495a6cc970c",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:45:57Z",
         "updated_at": "2025-08-21T07:46:03Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.1.1-cp310-cp310-linux_x86_64-ubuntu-20.whl"
@@ -57442,7 +57442,7 @@
         "state": "uploaded",
         "size": 143793273,
         "digest": "sha256:f2e6b2aab13b34e725e125139149179e4a14ce29ed0c5ce8cf5ad369bce152b3",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:46:56Z",
         "updated_at": "2025-08-21T07:47:01Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.1.1-cp38-cp38-linux_x86_64-fedora-39.whl"
@@ -57514,7 +57514,7 @@
         "state": "uploaded",
         "size": 150017808,
         "digest": "sha256:6b1757d25e46ef00daab33d2f4efdb576dfb8d718a12e2175fff7300414d0a5a",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:47:17Z",
         "updated_at": "2025-08-21T07:47:23Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.1.1-cp38-cp38-linux_x86_64-fedora-41.whl"
@@ -57946,7 +57946,7 @@
         "state": "uploaded",
         "size": 143778069,
         "digest": "sha256:f40cdbb8c710a303fb6d7cdc84b002e43566d042e99fed664d9c1921595948a3",
-        "download_count": 6,
+        "download_count": 7,
         "created_at": "2025-08-21T07:49:04Z",
         "updated_at": "2025-08-21T07:49:10Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-39.whl"
@@ -59350,7 +59350,7 @@
         "state": "uploaded",
         "size": 149751261,
         "digest": "sha256:a5e7a7cc1a53322a41938aadcda09ec4d937eaee241ab1007adbdc2b0a8ffc73",
-        "download_count": 8,
+        "download_count": 9,
         "created_at": "2025-08-21T07:55:02Z",
         "updated_at": "2025-08-21T07:55:08Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.2.0-cp39-cp39-linux_x86_64-centos-9.whl"
@@ -59638,7 +59638,7 @@
         "state": "uploaded",
         "size": 137847050,
         "digest": "sha256:8377e3e5ddeb16c2389c9ee63677c5e6c478a5ae9db5b88d9ee760c75967fdfc",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:56:15Z",
         "updated_at": "2025-08-21T07:56:19Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.2.0-cp39-cp39-linux_x86_64-opensuse-leap-15.whl"
@@ -59674,7 +59674,7 @@
         "state": "uploaded",
         "size": 149616563,
         "digest": "sha256:d7e68f573563df8549c1326e1a9c17352487e3bc2bf32648847b539e8621af10",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:56:22Z",
         "updated_at": "2025-08-21T07:56:28Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.2.0-cp39-cp39-linux_x86_64-pop-22.whl"
@@ -59890,7 +59890,7 @@
         "state": "uploaded",
         "size": 137826341,
         "digest": "sha256:738055f028640a0d958c53f1bc97fc8ab1f1662a6849629b9938bf7004d49498",
-        "download_count": 7,
+        "download_count": 8,
         "created_at": "2025-08-21T07:57:13Z",
         "updated_at": "2025-08-21T07:57:18Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.2/wxPython-4.2.1-cp310-cp310-linux_x86_64-debian-11.whl"
@@ -64469,7 +64469,7 @@
         "state": "uploaded",
         "size": 149933974,
         "digest": "sha256:447c80ffe9d4852df7e15c5d779d20a1caed5bdc1110875ed4ee1bd2c57b46f4",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-08-15T14:37:23Z",
         "updated_at": "2025-08-15T14:37:27Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.1/wxPython-4.1.1-cp38-cp38-linux_x86_64-ubuntu-20.whl"
@@ -64721,7 +64721,7 @@
         "state": "uploaded",
         "size": 149995376,
         "digest": "sha256:b31f917d3b1a4f90fa10b6c6c04a9274cea9a0ce0f780f5f4e2ac3d71285ec58",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-08-15T14:38:32Z",
         "updated_at": "2025-08-15T14:38:36Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.1/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-40.whl"
@@ -65153,7 +65153,7 @@
         "state": "uploaded",
         "size": 149406734,
         "digest": "sha256:8c147265331ecb812a52c826172a3d6de0a69dd0a5b11dc64a602f1bd6c3048b",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-08-15T14:40:32Z",
         "updated_at": "2025-08-15T14:40:36Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.1/wxPython-4.2.0-cp310-cp310-linux_x86_64-debian-12.whl"
@@ -66269,7 +66269,7 @@
         "state": "uploaded",
         "size": 154994815,
         "digest": "sha256:c23e9fd6c651676db6a591abd5886a09de0c242e69ac3c30ef5118dfe62693a3",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-08-15T14:45:57Z",
         "updated_at": "2025-08-15T14:46:01Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.1/wxPython-4.2.0-cp39-cp39-linux_x86_64-fedora-41.whl"
@@ -76357,7 +76357,7 @@
         "state": "uploaded",
         "size": 151216527,
         "digest": "sha256:8ff54a9f3e394bbf4987cb5f93f0ce64c3ed2ea6696bfe7b40dd7a79db047095",
-        "download_count": 5,
+        "download_count": 6,
         "created_at": "2025-08-08T13:01:43Z",
         "updated_at": "2025-08-08T13:03:35Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.0/wxPython-4.2.3-cp310-cp310-linux_x86_64-pop-22.whl"
@@ -76933,7 +76933,7 @@
         "state": "uploaded",
         "size": 156289680,
         "digest": "sha256:8f2bde535a55046375effa565415377e2c7ef392fd47e2a4ae41059ef749af45",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-08-08T13:10:09Z",
         "updated_at": "2025-08-08T13:10:16Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.1.0/wxPython-4.2.3-cp39-cp39-linux_x86_64-ubuntu-20.whl"
@@ -78021,7 +78021,7 @@
         "state": "uploaded",
         "size": 143945859,
         "digest": "sha256:b97fc944ddbc895e2554ddc446f84e0553dc6f5320a62d392b279193cd789c8f",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-17T13:22:59Z",
         "updated_at": "2025-07-17T13:23:04Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.9/wxPython-4.1.1-cp38-cp38-linux_x86_64-ubuntu-24.whl"
@@ -78849,7 +78849,7 @@
         "state": "uploaded",
         "size": 137956278,
         "digest": "sha256:ac41829003d0657f28809c36b0f97c69a9871590d5eb5ee05162e50018a4c6c2",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-17T13:25:44Z",
         "updated_at": "2025-07-17T13:25:48Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.9/wxPython-4.2.0-cp310-cp310-linux_x86_64-opensuse-leap-15.whl"
@@ -80001,7 +80001,7 @@
         "state": "uploaded",
         "size": 149616296,
         "digest": "sha256:19467da581bcde5cfc68680727c6da1ad25b40a80e2e82dfcfd4bc9b6c41537c",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-07-17T13:29:26Z",
         "updated_at": "2025-07-17T13:29:30Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.9/wxPython-4.2.0-cp39-cp39-linux_x86_64-ubuntu-22.whl"
@@ -85552,7 +85552,7 @@
         "state": "uploaded",
         "size": 151911677,
         "digest": "sha256:e2d4d9f4e6f1ffb4a36e228c769d0efcf7b5f2798be1a3831fb0aabb3d64d5ca",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-12T10:07:17Z",
         "updated_at": "2025-07-12T10:07:23Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.8/wxPython-4.2.0-cp310-cp310-linux_x86_64-manjarolinux-25.whl"
@@ -85624,7 +85624,7 @@
         "state": "uploaded",
         "size": 149726565,
         "digest": "sha256:8085b67ce4367d4b9ef95983b4ae31985a4ba8dafef00fcef6b9588c141bfe03",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-12T10:07:38Z",
         "updated_at": "2025-07-12T10:07:43Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.8/wxPython-4.2.0-cp310-cp310-linux_x86_64-pop-22.whl"
@@ -86236,7 +86236,7 @@
         "state": "uploaded",
         "size": 149639417,
         "digest": "sha256:972874c4512508436d45c92155b608154a1f01cdbebea322932fbb09b46377ce",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-12T10:10:49Z",
         "updated_at": "2025-07-12T10:10:54Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.8/wxPython-4.2.0-cp38-cp38-linux_x86_64-ubuntu-22.whl"
@@ -86488,7 +86488,7 @@
         "state": "uploaded",
         "size": 154994815,
         "digest": "sha256:c23e9fd6c651676db6a591abd5886a09de0c242e69ac3c30ef5118dfe62693a3",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-07-12T10:12:09Z",
         "updated_at": "2025-07-12T10:12:14Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.8/wxPython-4.2.0-cp39-cp39-linux_x86_64-fedora-41.whl"
@@ -91895,7 +91895,7 @@
         "state": "uploaded",
         "size": 144715374,
         "digest": "sha256:b11a1c69d8d17d40ff46a5b3e00eb41746aeaa7c3164c44da5f1c3058169ce14",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-09T09:31:05Z",
         "updated_at": "2025-07-09T09:31:10Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.7/wxPython-4.1.1-cp39-cp39-linux_x86_64-rocky-9.whl"
@@ -92075,7 +92075,7 @@
         "state": "uploaded",
         "size": 137440649,
         "digest": "sha256:690ef7903ec55e1deb29763846d9b2ba8b56fd35f099427ba41fa59641dc5720",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-07-09T09:32:04Z",
         "updated_at": "2025-07-09T09:32:10Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.7/wxPython-4.2.0-cp310-cp310-linux_x86_64-debian-11.whl"
@@ -97663,7 +97663,7 @@
         "state": "uploaded",
         "size": 149920145,
         "digest": "sha256:05a521468b0ff0025ada01a86be83847e0a03221dfae327306e7b495a6cc970c",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-26T19:20:34Z",
         "updated_at": "2025-06-26T19:20:39Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.6/wxPython-4.1.1-cp310-cp310-linux_x86_64-ubuntu-20.whl"
@@ -98923,7 +98923,7 @@
         "state": "uploaded",
         "size": 155114348,
         "digest": "sha256:c629cf9f87bfc543580a161e22faaddccb6efee87b41f5b03d2ab82750ce0d99",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-26T19:24:16Z",
         "updated_at": "2025-06-26T19:24:20Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.6/wxPython-4.2.0-cp310-cp310-linux_x86_64-fedora-40.whl"
@@ -98959,7 +98959,7 @@
         "state": "uploaded",
         "size": 155116593,
         "digest": "sha256:dc4922f35671db88d48b088d7f916a0f3f88258d0ae6c49a65002b87ca71c5ab",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-26T19:24:22Z",
         "updated_at": "2025-06-26T19:24:26Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.6/wxPython-4.2.0-cp310-cp310-linux_x86_64-fedora-41.whl"
@@ -99283,7 +99283,7 @@
         "state": "uploaded",
         "size": 149778523,
         "digest": "sha256:bb703c385476f2b0d394c4ff18d939d617e7229854fb188012acc4230853c8e0",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-06-26T19:25:21Z",
         "updated_at": "2025-06-26T19:25:26Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.6/wxPython-4.2.0-cp38-cp38-linux_x86_64-centos-9.whl"
@@ -100291,7 +100291,7 @@
         "state": "uploaded",
         "size": 150260206,
         "digest": "sha256:c10031be474dc2744e6007fd779c36bcbda2fca5c5a5ca80a903e17eef0788e7",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-26T19:28:25Z",
         "updated_at": "2025-06-26T19:28:29Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.6/wxPython-4.2.1-cp310-cp310-linux_x86_64-centos-9.whl"
@@ -104798,7 +104798,7 @@
         "state": "uploaded",
         "size": 134399983,
         "digest": "sha256:6d8f44f93545b137ed99f535857c7a3de22c33aa26cc4fb4fd1f0608818b3f44",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-25T14:11:30Z",
         "updated_at": "2025-06-25T14:11:34Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.5/wxPython-4.1.1-cp38-cp38-linux_x86_64-opensuse-leap-15.whl"
@@ -105518,7 +105518,7 @@
         "state": "uploaded",
         "size": 149846799,
         "digest": "sha256:2cf645ba19a8bb654dd6cd0b6c07a6ac2e828e9803ce484bf276b00f8f04d45c",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-25T14:13:39Z",
         "updated_at": "2025-06-25T14:13:43Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.5/wxPython-4.2.0-cp310-cp310-linux_x86_64-centos-9.whl"
@@ -106922,7 +106922,7 @@
         "state": "uploaded",
         "size": 154675192,
         "digest": "sha256:29bf055c58993551a2d1f29b53e2b035982f2c11d9d43cbe2416ab061406018c",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-25T14:17:54Z",
         "updated_at": "2025-06-25T14:17:58Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.5/wxPython-4.2.0-cp39-cp39-linux_x86_64-ubuntu-20.whl"
@@ -107462,7 +107462,7 @@
         "state": "uploaded",
         "size": 137723937,
         "digest": "sha256:9c2dab1da2f69b44104b0fd1c6db3d12a5b3166859288157f48078916f6d67b5",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-25T14:19:32Z",
         "updated_at": "2025-06-25T14:19:36Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.5/wxPython-4.2.1-cp38-cp38-linux_x86_64-debian-11.whl"
@@ -112222,7 +112222,7 @@
         "state": "uploaded",
         "size": 143920883,
         "digest": "sha256:1410fdb715f7350d18c88edc07b6a1ef5c074c6af09c0157c1368d51f8f8230b",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-20T08:34:28Z",
         "updated_at": "2025-06-20T08:34:31Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.4/wxPython-4.1.1-cp39-cp39-linux_x86_64-ubuntu-24.whl"
@@ -112258,7 +112258,7 @@
         "state": "uploaded",
         "size": 149846799,
         "digest": "sha256:2cf645ba19a8bb654dd6cd0b6c07a6ac2e828e9803ce484bf276b00f8f04d45c",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-20T08:34:34Z",
         "updated_at": "2025-06-20T08:34:39Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.4/wxPython-4.2.0-cp310-cp310-linux_x86_64-centos-9.whl"
@@ -112438,7 +112438,7 @@
         "state": "uploaded",
         "size": 155116593,
         "digest": "sha256:dc4922f35671db88d48b088d7f916a0f3f88258d0ae6c49a65002b87ca71c5ab",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-20T08:35:06Z",
         "updated_at": "2025-06-20T08:35:11Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.4/wxPython-4.2.0-cp310-cp310-linux_x86_64-fedora-41.whl"
@@ -112762,7 +112762,7 @@
         "state": "uploaded",
         "size": 149778523,
         "digest": "sha256:bb703c385476f2b0d394c4ff18d939d617e7229854fb188012acc4230853c8e0",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-20T08:36:05Z",
         "updated_at": "2025-06-20T08:36:10Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.4/wxPython-4.2.0-cp38-cp38-linux_x86_64-centos-9.whl"
@@ -113086,7 +113086,7 @@
         "state": "uploaded",
         "size": 149639623,
         "digest": "sha256:79640f09eaea9f4bcc965b3954955a09544f1b813b9f1ed45d6bd01dee2d2cb0",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-20T08:37:01Z",
         "updated_at": "2025-06-20T08:37:04Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.4/wxPython-4.2.0-cp38-cp38-linux_x86_64-pop-22.whl"
@@ -113590,7 +113590,7 @@
         "state": "uploaded",
         "size": 149616563,
         "digest": "sha256:d7e68f573563df8549c1326e1a9c17352487e3bc2bf32648847b539e8621af10",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-20T08:38:27Z",
         "updated_at": "2025-06-20T08:38:31Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.4/wxPython-4.2.0-cp39-cp39-linux_x86_64-pop-22.whl"
@@ -117593,7 +117593,7 @@
         "state": "uploaded",
         "size": 144820084,
         "digest": "sha256:d188b02bd809758be8d77e05bd036dc3ba942f03d8652cc4274d4a768df51482",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-19T07:11:22Z",
         "updated_at": "2025-06-19T07:11:26Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.3/wxPython-4.1.1-cp310-cp310-linux_x86_64-centos-9.whl"
@@ -118025,7 +118025,7 @@
         "state": "uploaded",
         "size": 132908765,
         "digest": "sha256:4aedd0d9278219ccfa008b337be653499c003047bec1c0432c1ce672685d84d2",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-19T07:12:30Z",
         "updated_at": "2025-06-19T07:12:33Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.3/wxPython-4.1.1-cp38-cp38-linux_x86_64-debian-11.whl"
@@ -118637,7 +118637,7 @@
         "state": "uploaded",
         "size": 149995376,
         "digest": "sha256:b31f917d3b1a4f90fa10b6c6c04a9274cea9a0ce0f780f5f4e2ac3d71285ec58",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-19T07:14:10Z",
         "updated_at": "2025-06-19T07:14:14Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.3/wxPython-4.1.1-cp39-cp39-linux_x86_64-fedora-40.whl"
@@ -120077,7 +120077,7 @@
         "state": "uploaded",
         "size": 149297886,
         "digest": "sha256:b83d290e85666d40370e43a8a188497e242690802799d70d599e74e0151f8fcc",
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-06-19T07:18:05Z",
         "updated_at": "2025-06-19T07:18:08Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.3/wxPython-4.2.0-cp39-cp39-linux_x86_64-debian-12.whl"
@@ -125952,7 +125952,7 @@
         "state": "uploaded",
         "size": 149018827,
         "digest": "sha256:bd01136aa5b735d6f7276bc2dda2c79988970494f15ec3a4b2d2a99687dfebc3",
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2025-06-18T08:54:39Z",
         "updated_at": "2025-06-18T08:54:43Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.2/wxPython-4.2.0-cp310-cp310-linux_x86_64-linuxmint-22.whl"
@@ -126636,7 +126636,7 @@
         "state": "uploaded",
         "size": 154804701,
         "digest": "sha256:4eced544e60a6783160196bff4b4f90666cea592a932f5cfc7755e660da8ad90",
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2025-06-18T08:56:13Z",
         "updated_at": "2025-06-18T08:56:18Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.2/wxPython-4.2.0-cp38-cp38-linux_x86_64-ubuntu-20.whl"
@@ -127320,7 +127320,7 @@
         "state": "uploaded",
         "size": 149826534,
         "digest": "sha256:dbfd5284f1bd6f28dce9b8dfd34b2246e2a6465ca5b87b4ad548a4705ce58045",
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2025-06-18T08:57:47Z",
         "updated_at": "2025-06-18T08:57:51Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.2/wxPython-4.2.1-cp310-cp310-linux_x86_64-debian-12.whl"
@@ -131684,7 +131684,7 @@
         "state": "uploaded",
         "size": 143945862,
         "digest": "sha256:b8b7f6b2075c47d81814ef490b9c8a90e26491e69476c8438d6a2c3a5c77236f",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-06-16T18:47:05Z",
         "updated_at": "2025-06-16T18:47:09Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.1/wxPython-4.1.1-cp38-cp38-linux_x86_64-linuxmint-22.whl"
@@ -132764,7 +132764,7 @@
         "state": "uploaded",
         "size": 137956278,
         "digest": "sha256:ac41829003d0657f28809c36b0f97c69a9871590d5eb5ee05162e50018a4c6c2",
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-06-16T18:50:38Z",
         "updated_at": "2025-06-16T18:50:41Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v2.0.1/wxPython-4.2.0-cp310-cp310-linux_x86_64-opensuse-leap-15.whl"
@@ -199109,7 +199109,7 @@
         "state": "uploaded",
         "size": 66235984,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-03-19T18:59:53Z",
         "updated_at": "2025-03-19T18:59:57Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.5.2/python-3.8.20-linux_x86_64-rocky-9.tar.gz"
@@ -200225,7 +200225,7 @@
         "state": "uploaded",
         "size": 132908765,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-03-19T19:09:04Z",
         "updated_at": "2025-03-19T19:09:11Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.5.2/wxPython-4.1.1-cp38-cp38-linux_x86_64-debian-11.whl"
@@ -202169,7 +202169,7 @@
         "state": "uploaded",
         "size": 148925101,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-03-19T19:08:04Z",
         "updated_at": "2025-03-19T19:08:11Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.5.2/wxPython-4.2.0-cp38-cp38-linux_x86_64-ubuntu-24.whl"
@@ -203033,7 +203033,7 @@
         "state": "uploaded",
         "size": 150123778,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-03-19T18:51:58Z",
         "updated_at": "2025-03-19T18:52:04Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.5.2/wxPython-4.2.1-cp310-cp310-linux_x86_64-ubuntu-22.whl"
@@ -208873,7 +208873,7 @@
         "state": "uploaded",
         "size": 149726021,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-03-03T21:08:18Z",
         "updated_at": "2025-03-03T21:08:25Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.5.1/wxPython-4.2.0-cp310-cp310-linux_x86_64-ubuntu-22.whl"
@@ -209989,7 +209989,7 @@
         "state": "uploaded",
         "size": 137826341,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-03-03T23:17:13Z",
         "updated_at": "2025-03-03T23:17:20Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.5.1/wxPython-4.2.1-cp310-cp310-linux_x86_64-debian-11.whl"
@@ -221417,7 +221417,7 @@
         "state": "uploaded",
         "size": 144776502,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-02-03T07:51:14Z",
         "updated_at": "2025-02-03T07:51:20Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.3/wxPython-4.1.1-cp38-cp38-linux_x86_64-centos-9.whl"
@@ -221597,7 +221597,7 @@
         "state": "uploaded",
         "size": 143945862,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-02-03T07:52:22Z",
         "updated_at": "2025-02-03T07:52:27Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.3/wxPython-4.1.1-cp38-cp38-linux_x86_64-linuxmint-22.whl"
@@ -222929,7 +222929,7 @@
         "state": "uploaded",
         "size": 148789239,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-02-03T07:51:03Z",
         "updated_at": "2025-02-03T07:51:33Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.3/wxPython-4.2.0-cp38-cp38-linux_x86_64-fedora-39.whl"
@@ -228192,7 +228192,7 @@
         "state": "uploaded",
         "size": 144759981,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-02-02T10:48:14Z",
         "updated_at": "2025-02-02T10:48:20Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.2/wxPython-4.1.1-cp310-cp310-linux_x86_64-ubuntu-22.whl"
@@ -233743,7 +233743,7 @@
         "state": "uploaded",
         "size": 66240779,
         "digest": null,
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-01-29T09:48:20Z",
         "updated_at": "2025-01-29T09:48:31Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.1/python-3.8.20-linux_x86_64-centos-9.tar.gz"
@@ -235363,7 +235363,7 @@
         "state": "uploaded",
         "size": 150167316,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2025-01-29T09:47:51Z",
         "updated_at": "2025-01-29T09:48:25Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.1/wxPython-4.2.2-cp38-cp38-linux_x86_64-linuxmint-22.whl"
@@ -235615,7 +235615,7 @@
         "state": "uploaded",
         "size": 150167266,
         "digest": null,
-        "download_count": 4,
+        "download_count": 5,
         "created_at": "2025-01-29T09:48:16Z",
         "updated_at": "2025-01-29T09:48:55Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.1/wxPython-4.2.2-cp38-cp38-linux_x86_64-ubuntu-24.whl"
@@ -236307,7 +236307,7 @@
         "state": "uploaded",
         "size": 71778483,
         "digest": null,
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-01-19T19:31:26Z",
         "updated_at": "2025-01-19T19:31:29Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.0/python-3.10.16-linux_x86_64-fedora-39.tar.gz"
@@ -236775,7 +236775,7 @@
         "state": "uploaded",
         "size": 65018433,
         "digest": null,
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2025-01-19T19:33:56Z",
         "updated_at": "2025-01-19T19:34:04Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.0/python-3.8.20-linux_x86_64-fedora-39.tar.gz"
@@ -237315,7 +237315,7 @@
         "state": "uploaded",
         "size": 70387142,
         "digest": null,
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2025-01-19T19:50:37Z",
         "updated_at": "2025-01-19T19:50:40Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.0/python-3.9.21-linux_x86_64-linuxmint-22.tar.gz"
@@ -238143,7 +238143,7 @@
         "state": "uploaded",
         "size": 138637295,
         "digest": null,
-        "download_count": 4,
+        "download_count": 5,
         "created_at": "2025-01-19T19:34:33Z",
         "updated_at": "2025-01-19T19:34:55Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.0/wxPython-4.2.2-cp38-cp38-linux_x86_64-debian-11.whl"
@@ -238683,7 +238683,7 @@
         "state": "uploaded",
         "size": 149938267,
         "digest": null,
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2025-01-19T19:43:36Z",
         "updated_at": "2025-01-19T19:44:01Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.4.0/wxPython-4.2.2-cp39-cp39-linux_x86_64-fedora-39.whl"
@@ -239807,7 +239807,7 @@
         "state": "uploaded",
         "size": 66527354,
         "digest": null,
-        "download_count": 5,
+        "download_count": 6,
         "created_at": "2024-11-22T21:00:35Z",
         "updated_at": "2024-11-22T21:00:37Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.2/python-3.8.20-linux_x86_64-manjarolinux-24.tar.gz"
@@ -242586,7 +242586,7 @@
         "state": "uploaded",
         "size": 65919767,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2024-11-19T11:00:12Z",
         "updated_at": "2024-11-19T11:00:15Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.1/python-3.8.20-linux_x86_64-debian-12.tar.gz"
@@ -242622,7 +242622,7 @@
         "state": "uploaded",
         "size": 65018433,
         "digest": null,
-        "download_count": 2,
+        "download_count": 3,
         "created_at": "2024-11-19T11:28:19Z",
         "updated_at": "2024-11-19T11:28:21Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.1/python-3.8.20-linux_x86_64-fedora-39.tar.gz"
@@ -243018,7 +243018,7 @@
         "state": "uploaded",
         "size": 74878744,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2024-11-19T11:08:41Z",
         "updated_at": "2024-11-19T11:08:44Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.1/python-3.9.20-linux_x86_64-debian-11.tar.gz"
@@ -245041,7 +245041,7 @@
         "state": "uploaded",
         "size": 72752526,
         "digest": null,
-        "download_count": 8,
+        "download_count": 9,
         "created_at": "2024-11-04T13:10:10Z",
         "updated_at": "2024-11-04T13:10:12Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.0/python-3.10.15-linux_x86_64-debian-12.tar.gz"
@@ -246085,7 +246085,7 @@
         "state": "uploaded",
         "size": 70361045,
         "digest": null,
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2024-11-04T13:01:43Z",
         "updated_at": "2024-11-04T13:01:51Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.0/python-3.9.20-linux_x86_64-linuxmint-22.tar.gz"
@@ -246373,7 +246373,7 @@
         "state": "uploaded",
         "size": 9991,
         "digest": null,
-        "download_count": 1,
+        "download_count": 2,
         "created_at": "2024-11-04T10:25:27Z",
         "updated_at": "2024-11-04T10:25:27Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.0/README.md"
@@ -246589,7 +246589,7 @@
         "state": "uploaded",
         "size": 150270772,
         "digest": null,
-        "download_count": 6,
+        "download_count": 7,
         "created_at": "2024-11-04T13:08:45Z",
         "updated_at": "2024-11-04T13:08:50Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.0/wxPython-4.2.2-cp310-cp310-linux_x86_64-linuxmint-22.whl"
@@ -247417,7 +247417,7 @@
         "state": "uploaded",
         "size": 150448758,
         "digest": null,
-        "download_count": 3,
+        "download_count": 4,
         "created_at": "2024-11-04T13:01:52Z",
         "updated_at": "2024-11-04T13:01:58Z",
         "browser_download_url": "https://github.com/wieluk/psychopy_linux_installer/releases/download/v1.3.0/wxPython-4.2.2-cp39-cp39-linux_x86_64-debian-12.whl"
